@@ -1,2 +1,5 @@
-package northwindProject.demo.entities.concretes;public class OrderDetails {
+package northwindProject.demo.entities.concretes;
+
+public
+class OrderDetails {
 }
