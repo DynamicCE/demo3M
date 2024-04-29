@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -17,9 +18,10 @@ class Category {
     @Id
     @Column(name = "category_id")
     private int categoryId;
+    
     @Column(name = "category_name")
     private String categoryName;
 
-    @OneToMany(mappedBy = "categories")
-    private List<Product> products;
+    @OneToMany(mappedBy = "category")
+    private Set<Product> products;
 }
