@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/products/")
 public
 class ProductController {
 
@@ -50,6 +50,24 @@ class ProductController {
     public DataResult<List<Product>> getByCategoryIdIn(List<Integer> categories){
         return productService.getByCategoryIdIn ( categories );
     }
+    @GetMapping("getByProductNameContains")
+    public DataResult<List<Product>> getByProductNameContains(String productName){
+        return productService.getByProductNameContains ( productName );
+    }
 
+    @GetMapping("getByProductNameStartsWith")
+    public DataResult<List<Product>> getByProductNameStartsWith(String productName){
+        return productService.getByProductNameStartsWith ( productName );
+    }
+
+    @GetMapping("getByProductNameEndsWith")
+    public DataResult<List<Product>> getByProductNameEndsWith(String productName){
+        return productService.getByProductNameEndsWith ( productName );
+    }
+
+    @GetMapping("getByNameAndCategory")
+    public DataResult<List<Product>> getByNameAndCategory( String productName, int categoryId ){
+        return productService.getByNameAndCategory ( productName,categoryId );
+    }
 }
 
