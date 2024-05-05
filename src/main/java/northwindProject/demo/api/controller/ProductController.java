@@ -34,5 +34,22 @@ class ProductController {
     Result add ( @RequestBody Product product ) {
         return productService.add ( product );
     }
+    @GetMapping("getByProductName")
+    public DataResult<Product> getByProductName(String productName){
+        return productService.getByProductName ( productName );
+    }
+    @GetMapping("getByProductNameAndCategoryId")
+    public DataResult<Product> getByProductNameAndCategoryId(String productName,int categoryId){
+        return productService.getByProductNameAndCategoryId ( productName,categoryId );
+    }
+    @GetMapping("getByProductNameOrCategoryId")
+    public DataResult<List<Product>> getByProductNameOrCategoryId(String productName,int categoryId){
+        return productService.getByProductNameOrCategoryId ( productName,categoryId );
+    }
+    @GetMapping("getByCategoryIdIn")
+    public DataResult<List<Product>> getByCategoryIdIn(List<Integer> categories){
+        return productService.getByCategoryIdIn ( categories );
+    }
+
 }
 
