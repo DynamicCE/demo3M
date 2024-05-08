@@ -18,7 +18,7 @@ class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-//    @Column(name = "category_id") joincolumn sonrası gerek kalmadı
+//   @Column(name = "category_id") //joincolumn sonrası gerek kalmadı
 //    private int categoryId;
 
     @Column(name = "product_name")

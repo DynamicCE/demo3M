@@ -39,17 +39,17 @@ class ProductController {
     public DataResult<Product> getByProductName(@RequestParam String productName){
         return productService.getByProductName ( productName );
     }
-    @GetMapping("getByProductNameAndCategoryId")
-    public DataResult<Product> getByProductNameAndCategoryId(String productName,int categoryId){
-        return productService.getByProductNameAndCategoryId ( productName,categoryId );
+    @GetMapping("getByProductNameAndCategory")
+    public DataResult<Product> getByProductNameAndCategory(String productName,int categoryId){
+        return productService.getByProductNameAndCategory ( productName,categoryId );
     }
-    @GetMapping("getByProductNameOrCategoryId")
-    public DataResult<List<Product>> getByProductNameOrCategoryId(String productName,int categoryId){
-        return productService.getByProductNameOrCategoryId ( productName,categoryId );
+    @GetMapping("getByProductNameOrCategory")
+    public DataResult<List<Product>> getByProductNameOrCategory(String productName,int categoryId){
+        return productService.getByProductNameOrCategory ( productName,categoryId );
     }
-    @GetMapping("getByCategoryIdIn")
-    public DataResult<List<Product>> getByCategoryIdIn(List<Integer> categories){
-        return productService.getByCategoryIdIn ( categories );
+    @GetMapping("getByCategoryIn")
+    public DataResult<List<Product>> getByCategoryIn(List<Integer> categories){
+        return productService.getByCategoryIn ( categories );
     }
     @GetMapping("getByProductNameContains")
     public DataResult<List<Product>> getByProductNameContains(String productName){
