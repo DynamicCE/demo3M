@@ -46,7 +46,7 @@ class ProductController {
     @GetMapping("getByProductNameOrCategory")
     public DataResult<List<Product>> getByProductNameOrCategory(String productName,int categoryId){
         return productService.getByProductNameOrCategory ( productName,categoryId );
-    }
+    } 
     @GetMapping("getByCategoryIn")
     public DataResult<List<Product>> getByCategoryIn(List<Integer> categories){
         return productService.getByCategoryIn ( categories );
