@@ -43,21 +43,21 @@ class ProductManager implements ProductService {
 
     @Override
     public
-    DataResult<Product> getByProductNameAndCategory ( String productName, int categoryId ) {
+    DataResult<Product> getByProductNameAndCategoryId ( String productName, int categoryId ) {
         // iş kodları
 
-        return new SuccessDataResult<Product> ( productDao.getByProductNameAndCategory ( productName,categoryId ),"veri listelendi" );
+        return new SuccessDataResult<Product> ( productDao.getByProductNameAndCategory_CategoryId ( productName,categoryId ),"veri listelendi" );
     }
 
     @Override
     public
-    DataResult<List<Product>> getByProductNameOrCategory ( String productName, int categoryId ) {
-        return new SuccessDataResult<List<Product>> ( productDao.getByProductNameOrCategory ( productName,categoryId ),"veri listelendi");
+    DataResult<List<Product>> getByProductNameOrCategoryId ( String productName, int categoryId ) {
+        return new SuccessDataResult<List<Product>> ( productDao.getByProductNameOrCategory_CategoryId ( productName,categoryId ),"veri listelendi");
     }
 
     @Override
     public
-    DataResult<List<Product>> getByCategoryIn ( List<Integer> categories ) {
+    DataResult<List<Product>> getByCategoryIdIn ( List<Integer> categories ) {
         return new SuccessDataResult<List<Product>>(productDao.getByCategoryIn ( categories ),"veri listelendi");
     }
 

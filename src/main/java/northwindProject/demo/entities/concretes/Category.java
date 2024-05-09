@@ -1,5 +1,6 @@
 package northwindProject.demo.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Table(name = "categories")
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"})
 public
 class Category {
     @Id

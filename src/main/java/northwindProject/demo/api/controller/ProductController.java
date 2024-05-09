@@ -40,16 +40,8 @@ class ProductController {
         return productService.getByProductName ( productName );
     }
     @GetMapping("getByProductNameAndCategory")
-    public DataResult<Product> getByProductNameAndCategory(String productName,int categoryId){
-        return productService.getByProductNameAndCategory ( productName,categoryId );
-    }
-    @GetMapping("getByProductNameOrCategory")
-    public DataResult<List<Product>> getByProductNameOrCategory(String productName,int categoryId){
-        return productService.getByProductNameOrCategory ( productName,categoryId );
-    } 
-    @GetMapping("getByCategoryIn")
-    public DataResult<List<Product>> getByCategoryIn(List<Integer> categories){
-        return productService.getByCategoryIn ( categories );
+    public DataResult<Product> getByProductNameAndCategoryId(String productName,int categoryId){
+        return productService.getByProductNameAndCategoryId ( productName,categoryId );
     }
     @GetMapping("getByProductNameContains")
     public DataResult<List<Product>> getByProductNameContains(String productName){
