@@ -8,6 +8,7 @@ import northwindProject.demo.entities.concretes.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.crypto.Data;
 import java.util.List;
 
 @RestController
@@ -23,24 +24,24 @@ class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/getall")
+    @GetMapping("getall")
     public
     DataResult<List<Product>> getAll () {
         return productService.getAll ( );
     }
 
-    @PostMapping({"/add"})
+    @PostMapping({"add"})
     public
     Result add ( @RequestBody Product product ) {
         return productService.add ( product );
     }
-    @GetMapping("getByProductName")
 
+    @GetMapping("getByProductName")
     public DataResult<Product> getByProductName(@RequestParam String productName){
         return productService.getByProductName ( productName );
     }
-    @GetMapping("getByProductNameAndCategory")
-    public DataResult<Product> getByProductNameAndCategoryId(String productName,int categoryId){
+    @GetMapping("getByProductNameAndCategoryId")
+    public DataResult<Product> getByProductNameAndCategoryId(@RequestParam("productName") String productName,@RequestParam("categoryId") int categoryId){
         return productService.getByProductNameAndCategoryId ( productName,categoryId );
     }
     @GetMapping("getByProductNameContains")
@@ -61,6 +62,15 @@ class ProductController {
     @GetMapping("getByNameAndCategory")
     public DataResult<List<Product>> getByNameAndCategory( String productName, int categoryId ){
         return productService.getByNameAndCategory ( productName,categoryId );
+    }
+    @GetMapping("getAllByPage")
+    DataResult<List<Product>> getAll(int pageNo , int pageSize){
+        return this.productService.getAll (pageNo,pageSize);
+    }
+    @GetMapping("getAllSorted")
+    public
+    DataResult<List<Product>> getAllSorted (){
+        return productService.getAllSorted ();
     }
 }
 

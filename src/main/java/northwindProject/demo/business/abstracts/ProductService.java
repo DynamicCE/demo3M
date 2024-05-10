@@ -6,11 +6,16 @@ import northwindProject.demo.entities.concretes.Product;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
 import java.util.List;
 @Service
 public
 interface ProductService {
     DataResult<List<Product>> getAll();
+
+    DataResult<List<Product>> getAll(int pageNo,int pageSize);
+
+    DataResult<List<Product>> getAllSorted();
 
     Result add( Product product);
 
@@ -29,4 +34,6 @@ interface ProductService {
     DataResult<List<Product>> getByProductNameEndsWith(String productName);
 
     DataResult<List<Product>> getByNameAndCategory( String productName, int categoryId );
+    
+
 }
