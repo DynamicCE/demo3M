@@ -3,6 +3,7 @@ package northwindProject.demo.business.abstracts;
 import northwindProject.demo.core.utilities.results.DataResult;
 import northwindProject.demo.core.utilities.results.Result;
 import northwindProject.demo.entities.concretes.Product;
+import northwindProject.demo.entities.dtos.ProductWithCategoryDto;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,7 @@ interface ProductService {
     DataResult<List<Product>> getByProductNameEndsWith(String productName);
 
     DataResult<List<Product>> getByNameAndCategory( String productName, int categoryId );
-    
+
+    DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 
 }

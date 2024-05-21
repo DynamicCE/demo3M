@@ -7,6 +7,7 @@ import northwindProject.demo.core.utilities.results.Result;
 import northwindProject.demo.core.utilities.results.SuccessDataResult;
 import northwindProject.demo.core.utilities.results.SuccessResult;
 import northwindProject.demo.dataAccess.abstracts.ProductDao;
+import northwindProject.demo.entities.dtos.ProductWithCategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -103,5 +104,11 @@ class ProductManager implements ProductService {
     public
     DataResult<List<Product>> getByNameAndCategory ( String productName, int categoryId ) {
         return new SuccessDataResult<List<Product>> ( productDao.getByNameAndCategory ( productName,categoryId),"veri listelendi"  );
+    }
+
+    @Override
+    public
+    DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails () {
+        return new SuccessDataResult<List<ProductWithCategoryDto>> ( productDao.getProductWithCategoryDetails (),"işlem başarılı" );
     }
 }
