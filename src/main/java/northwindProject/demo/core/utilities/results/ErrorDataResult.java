@@ -3,13 +3,20 @@ package northwindProject.demo.core.utilities.results;
 public
 class ErrorDataResult<T> extends DataResult<T>{
 
-    public
-    ErrorDataResult ( boolean success, T data ) {
-        super ( success, data );
+    public ErrorDataResult(T data, String message) {
+        super(data, false ,message);
     }
 
-    public
-    ErrorDataResult (  String message, T data ) {
-        super ( false,message, data );
+    public ErrorDataResult(T data) {
+        super(data,false);
     }
+
+    public ErrorDataResult(String message) {
+        super(null, false ,message);
+    }
+
+    public ErrorDataResult() {
+        super(null, false);
+    }
+
 }
