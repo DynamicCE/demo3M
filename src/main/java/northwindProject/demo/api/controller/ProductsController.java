@@ -3,26 +3,23 @@ package northwindProject.demo.api.controller;
 import northwindProject.demo.business.abstracts.ProductService;
 import northwindProject.demo.core.utilities.results.DataResult;
 import northwindProject.demo.core.utilities.results.Result;
-import northwindProject.demo.core.utilities.results.SuccessDataResult;
-import northwindProject.demo.core.utilities.results.SuccessResult;
 import northwindProject.demo.entities.concretes.Product;
 import northwindProject.demo.entities.dtos.ProductWithCategoryDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/products/")
+@CrossOrigin
 public
-class ProductController {
+class ProductsController {
 
     private
     ProductService productService;
 
     public
-    ProductController ( ProductService productService ) {
+    ProductsController ( ProductService productService ) {
         this.productService = productService;
     }
 
